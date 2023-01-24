@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Statistics } from '../Statistics/Statistics';
 import { FeedbackOptions } from '../FeedbackOptions/FeedbackOptions';
 import { Notification } from '../Notification/Notificstion';
+import { Wrapper } from './App.styled';
 // import { nanoid } from 'nanoid';
 
 export class App extends Component {
@@ -36,7 +37,7 @@ export class App extends Component {
       good
     );
     return (
-      <>
+      <Wrapper>
         <h1>Please leave feedback</h1>
 
         <FeedbackOptions
@@ -55,7 +56,7 @@ export class App extends Component {
         ) : (
           <Notification message="There is no feedback" />
         )}
-      </>
+      </Wrapper>
     );
   }
 }

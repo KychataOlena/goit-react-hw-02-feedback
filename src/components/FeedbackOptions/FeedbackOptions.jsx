@@ -1,18 +1,20 @@
-// const FeedbackMap = [
-//   { button: 'good' },
-//   { button: 'neutral' },
-//   { button: 'bad' },
-// ];
+import { ButtonFeedback } from './FeedbackOptions.styled';
+import PropTypes from 'prop-types';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return options.map(option => (
-    <button
+    <ButtonFeedback
       name={option}
       type="button"
       onClick={() => onLeaveFeedback(option)}
       key={option}
     >
       {option}
-    </button>
+    </ButtonFeedback>
   ));
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.array.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };
